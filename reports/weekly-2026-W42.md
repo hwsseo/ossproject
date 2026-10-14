@@ -1,6 +1,6 @@
 # 📊 DORA 주간 보고서 — 2026년 42주차
 
-> 기간: 2026-10-12 ~ 2026-10-18 · 생성: 2026-10-15 04:19 KST · 계산 범위: 최근 30일 · 자동 생성 (GitHub Actions)
+> 기간: 2026-10-12 ~ 2026-10-18 · 생성: 2026-10-15 04:23 KST · 계산 범위: 최근 30일 · 자동 생성 (GitHub Actions)
 
 ![DORA dashboard](../metrics/dora-dashboard.png)
 
@@ -8,17 +8,18 @@
 
 | 지표 | 값 | 성과 등급 | 지난 측정 대비 |
 |---|---|---|---|
-| 🚀 배포 빈도 (Deployment Frequency) | **7.0회 / 주** | 🟢 Elite | — |
-| ⏱️ 변경 리드타임 (Lead Time for Changes) | **1 min** (중앙값) | 🟢 Elite | — |
-| 💥 변경 실패율 (Change Failure Rate) | **0.0%** | 🟢 Elite | — |
+| 🚀 배포 빈도 (Deployment Frequency) | **14.0회 / 주** | 🟢 Elite | ▲ 7.0회 (개선) |
+| ⏱️ 변경 리드타임 (Lead Time for Changes) | **2 min** (중앙값) | 🟢 Elite | ▲ 0.0h (악화) |
+| 💥 변경 실패율 (Change Failure Rate) | **0.0%** | 🟢 Elite | 변화 없음 |
 | 🛠️ 평균 복구 시간 (MTTR) | **N/A** | ⚪ N/A | — |
 
-- 전체 배포 **1회** (성공 1 · 실패 0), 복구 0회
+- 전체 배포 **2회** (성공 2 · 실패 0), 복구 0회
 
 ## 2. 이번 주 배포 기록
 
 | # | 완료 시각 (KST) | 결과 | 커밋 | 리드타임 |
 |---|---|---|---|---|
+| [2](https://github.com/hwsseo/ossproject/actions/runs/38623139532) | 10-15 04:22 | ✅ 성공 | `3e7f2d1` Deploy | 4 min |
 | [1](https://github.com/hwsseo/ossproject/actions/runs/38622584590) | 10-15 04:18 | ✅ 성공 | `b206c8d` ci: add deploy and DORA metrics workflows | 1 min |
 
 ## 3. 해석 및 다음 주 액션
