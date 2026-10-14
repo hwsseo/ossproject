@@ -9,8 +9,8 @@
 
 | 지표 | 값 | 성과 등급 | 지난 측정 대비 |
 |---|---|---|---|
-| 🚀 배포 빈도 (Deployment Frequency) | **14.0회 / 주** | 🟢 Elite | 변화 없음 |
-| ⏱️ 변경 리드타임 (Lead Time for Changes) | **2 min** (중앙값) | 🟢 Elite | 변화 없음 |
-| 💥 변경 실패율 (Change Failure Rate) | **33.3%** | 🔴 Low | ▲ 33.3%p (악화) |
-| 🛠️ 평균 복구 시간 (MTTR) | **N/A** | ⚪ N/A | — |
+| 🚀 배포 빈도 (Deployment Frequency) | **21.0회 / 주** | 🟢 Elite | ▲ 7.0회 (개선) |
+| ⏱️ 변경 리드타임 (Lead Time for Changes) | **1 min** (중앙값) | 🟢 Elite | ▼ 0.0h (개선) |
+| 💥 변경 실패율 (Change Failure Rate) | **25.0%** | 🟡 Medium | ▼ 8.3%p (개선) |
+| 🛠️ 평균 복구 시간 (MTTR) | **1 min** | 🟢 Elite | — |
 <!-- DORA:END -->
