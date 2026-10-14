@@ -1,0 +1,67 @@
+# ─────────────────────────────────────────────────────────────
+# DORA 4대 지표 자동 수집
+#  - Deploy 워크플로우가 끝날 때마다 / 매주 월요일 09:00(KST) / 수동 실행
+#  - 결과: metrics/*.json, metrics/dora-dashboard.png,
+#          reports/weekly-*.md, README.md의 DORA 섹션 자동 갱신
+#  - JSON은 Actions 실행 결과의 Artifacts 에도 저장
+# ─────────────────────────────────────────────────────────────
+name: DORA Metrics
+
+on:
+  workflow_run:
+    workflows: [Deploy]
+    types: [completed]
+  schedule:
+    - cron: "0 0 * * 1"   # 매주 월요일 00:00 UTC = 09:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: dora-metrics
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 가져오기
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Python 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 라이브러리 설치
+        run: pip install matplotlib==3.9.2
+
+      - name: DORA 지표 계산 + 대시보드/보고서 생성
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: python scripts/dora_metrics.py
+
+      - name: JSON 결과를 Artifact로 저장
+        uses: actions/upload-artifact@v4
+        with:
+          name: dora-metrics-${{ github.run_number }}
+          path: metrics/*.json
+          retention-days: 90
+
+      - name: 결과를 저장소에 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metrics reports README.md
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "chore(dora): update metrics [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

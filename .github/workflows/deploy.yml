@@ -1,0 +1,50 @@
+# ─────────────────────────────────────────────────────────────
+# 배포 파이프라인 (DORA 지표의 "배포" 기록을 만드는 워크플로우)
+#  - main 브랜치에 push 하면 자동 실행
+#  - Actions 탭에서 [Run workflow] 버튼으로 수동 실행도 가능
+#  - environment: production 을 쓰면 GitHub에 "배포 기록"이 남음
+# ─────────────────────────────────────────────────────────────
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      failure_drill:
+        description: "장애 훈련: true로 실행하면 배포를 일부러 실패시켜 CFR·MTTR 측정을 확인"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: 코드 가져오기
+        uses: actions/checkout@v4
+
+      - name: 기본 점검 (필수 파일 확인)
+        run: |
+          test -f README.md
+          test -f PROPOSAL.md
+          echo "✅ 필수 파일 확인 완료"
+
+      - name: 장애 훈련 (수동 실행 + failure_drill=true 일 때만)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.failure_drill }}
+        run: |
+          echo "🔥 장애 훈련: 배포를 의도적으로 실패시킵니다."
+          exit 1
+
+      - name: 배포 (production)
+        run: |
+          echo "🚀 Deploying ${GITHUB_SHA::7} to production"
+          echo "배포 시각(UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ)"
