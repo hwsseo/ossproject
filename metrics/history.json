@@ -46,5 +46,29 @@
       "change_failure_rate": "Elite",
       "mttr": "N/A"
     }
+  },
+  {
+    "generated_at": "2026-10-14T19:23:31+00:00",
+    "metrics": {
+      "deployment_frequency_per_week": 14.0,
+      "lead_time_hours_median": 0.03,
+      "change_failure_rate_pct": 33.3,
+      "mttr_hours": null,
+      "counts": {
+        "total": 3,
+        "success": 2,
+        "failure": 1,
+        "restores": 0,
+        "currently_failing": true
+      },
+      "window_days": 30,
+      "span_days": 1.0
+    },
+    "levels": {
+      "deployment_frequency": "Elite",
+      "lead_time": "Elite",
+      "change_failure_rate": "Low",
+      "mttr": "N/A"
+    }
   }
 ]
