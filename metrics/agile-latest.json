@@ -1,0 +1,588 @@
+{
+  "generated_at": "2026-10-15T11:02:18+00:00",
+  "cycle_time_hours_median": 0.0,
+  "cycle_time_hours_mean": 0.0,
+  "current_sprint": 1,
+  "current_sprint_points": 10,
+  "avg_velocity": null,
+  "velocity": [
+    {
+      "sprint": 1,
+      "start": "2026-10-12",
+      "end": "2026-10-25",
+      "points": 10,
+      "issues": 3,
+      "in_progress": true
+    }
+  ],
+  "burndowns": [
+    {
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "start": "2026-10-15",
+      "due": "2026-11-15",
+      "total_points": 34,
+      "done_points": 10,
+      "progress_pct": 29.4,
+      "remaining_points": 24,
+      "ideal_remaining_today": 34.0,
+      "days_left": 31,
+      "actual": [
+        {
+          "date": "2026-10-15",
+          "remaining": 24
+        }
+      ],
+      "ideal": [
+        {
+          "date": "2026-10-15",
+          "remaining": 34.0
+        },
+        {
+          "date": "2026-10-16",
+          "remaining": 32.9
+        },
+        {
+          "date": "2026-10-17",
+          "remaining": 31.81
+        },
+        {
+          "date": "2026-10-18",
+          "remaining": 30.71
+        },
+        {
+          "date": "2026-10-19",
+          "remaining": 29.61
+        },
+        {
+          "date": "2026-10-20",
+          "remaining": 28.52
+        },
+        {
+          "date": "2026-10-21",
+          "remaining": 27.42
+        },
+        {
+          "date": "2026-10-22",
+          "remaining": 26.32
+        },
+        {
+          "date": "2026-10-23",
+          "remaining": 25.23
+        },
+        {
+          "date": "2026-10-24",
+          "remaining": 24.13
+        },
+        {
+          "date": "2026-10-25",
+          "remaining": 23.03
+        },
+        {
+          "date": "2026-10-26",
+          "remaining": 21.94
+        },
+        {
+          "date": "2026-10-27",
+          "remaining": 20.84
+        },
+        {
+          "date": "2026-10-28",
+          "remaining": 19.74
+        },
+        {
+          "date": "2026-10-29",
+          "remaining": 18.65
+        },
+        {
+          "date": "2026-10-30",
+          "remaining": 17.55
+        },
+        {
+          "date": "2026-10-31",
+          "remaining": 16.45
+        },
+        {
+          "date": "2026-11-01",
+          "remaining": 15.35
+        },
+        {
+          "date": "2026-11-02",
+          "remaining": 14.26
+        },
+        {
+          "date": "2026-11-03",
+          "remaining": 13.16
+        },
+        {
+          "date": "2026-11-04",
+          "remaining": 12.06
+        },
+        {
+          "date": "2026-11-05",
+          "remaining": 10.97
+        },
+        {
+          "date": "2026-11-06",
+          "remaining": 9.87
+        },
+        {
+          "date": "2026-11-07",
+          "remaining": 8.77
+        },
+        {
+          "date": "2026-11-08",
+          "remaining": 7.68
+        },
+        {
+          "date": "2026-11-09",
+          "remaining": 6.58
+        },
+        {
+          "date": "2026-11-10",
+          "remaining": 5.48
+        },
+        {
+          "date": "2026-11-11",
+          "remaining": 4.39
+        },
+        {
+          "date": "2026-11-12",
+          "remaining": 3.29
+        },
+        {
+          "date": "2026-11-13",
+          "remaining": 2.19
+        },
+        {
+          "date": "2026-11-14",
+          "remaining": 1.1
+        },
+        {
+          "date": "2026-11-15",
+          "remaining": 0.0
+        }
+      ]
+    },
+    {
+      "milestone": "M2 · 감정 기록 + 위기 감지 + 배포",
+      "start": "2026-10-15",
+      "due": "2026-12-13",
+      "total_points": 21,
+      "done_points": 0,
+      "progress_pct": 0.0,
+      "remaining_points": 21,
+      "ideal_remaining_today": 21.0,
+      "days_left": 59,
+      "actual": [
+        {
+          "date": "2026-10-15",
+          "remaining": 21
+        }
+      ],
+      "ideal": [
+        {
+          "date": "2026-10-15",
+          "remaining": 21.0
+        },
+        {
+          "date": "2026-10-16",
+          "remaining": 20.64
+        },
+        {
+          "date": "2026-10-17",
+          "remaining": 20.29
+        },
+        {
+          "date": "2026-10-18",
+          "remaining": 19.93
+        },
+        {
+          "date": "2026-10-19",
+          "remaining": 19.58
+        },
+        {
+          "date": "2026-10-20",
+          "remaining": 19.22
+        },
+        {
+          "date": "2026-10-21",
+          "remaining": 18.86
+        },
+        {
+          "date": "2026-10-22",
+          "remaining": 18.51
+        },
+        {
+          "date": "2026-10-23",
+          "remaining": 18.15
+        },
+        {
+          "date": "2026-10-24",
+          "remaining": 17.8
+        },
+        {
+          "date": "2026-10-25",
+          "remaining": 17.44
+        },
+        {
+          "date": "2026-10-26",
+          "remaining": 17.08
+        },
+        {
+          "date": "2026-10-27",
+          "remaining": 16.73
+        },
+        {
+          "date": "2026-10-28",
+          "remaining": 16.37
+        },
+        {
+          "date": "2026-10-29",
+          "remaining": 16.02
+        },
+        {
+          "date": "2026-10-30",
+          "remaining": 15.66
+        },
+        {
+          "date": "2026-10-31",
+          "remaining": 15.31
+        },
+        {
+          "date": "2026-11-01",
+          "remaining": 14.95
+        },
+        {
+          "date": "2026-11-02",
+          "remaining": 14.59
+        },
+        {
+          "date": "2026-11-03",
+          "remaining": 14.24
+        },
+        {
+          "date": "2026-11-04",
+          "remaining": 13.88
+        },
+        {
+          "date": "2026-11-05",
+          "remaining": 13.53
+        },
+        {
+          "date": "2026-11-06",
+          "remaining": 13.17
+        },
+        {
+          "date": "2026-11-07",
+          "remaining": 12.81
+        },
+        {
+          "date": "2026-11-08",
+          "remaining": 12.46
+        },
+        {
+          "date": "2026-11-09",
+          "remaining": 12.1
+        },
+        {
+          "date": "2026-11-10",
+          "remaining": 11.75
+        },
+        {
+          "date": "2026-11-11",
+          "remaining": 11.39
+        },
+        {
+          "date": "2026-11-12",
+          "remaining": 11.03
+        },
+        {
+          "date": "2026-11-13",
+          "remaining": 10.68
+        },
+        {
+          "date": "2026-11-14",
+          "remaining": 10.32
+        },
+        {
+          "date": "2026-11-15",
+          "remaining": 9.97
+        },
+        {
+          "date": "2026-11-16",
+          "remaining": 9.61
+        },
+        {
+          "date": "2026-11-17",
+          "remaining": 9.25
+        },
+        {
+          "date": "2026-11-18",
+          "remaining": 8.9
+        },
+        {
+          "date": "2026-11-19",
+          "remaining": 8.54
+        },
+        {
+          "date": "2026-11-20",
+          "remaining": 8.19
+        },
+        {
+          "date": "2026-11-21",
+          "remaining": 7.83
+        },
+        {
+          "date": "2026-11-22",
+          "remaining": 7.47
+        },
+        {
+          "date": "2026-11-23",
+          "remaining": 7.12
+        },
+        {
+          "date": "2026-11-24",
+          "remaining": 6.76
+        },
+        {
+          "date": "2026-11-25",
+          "remaining": 6.41
+        },
+        {
+          "date": "2026-11-26",
+          "remaining": 6.05
+        },
+        {
+          "date": "2026-11-27",
+          "remaining": 5.69
+        },
+        {
+          "date": "2026-11-28",
+          "remaining": 5.34
+        },
+        {
+          "date": "2026-11-29",
+          "remaining": 4.98
+        },
+        {
+          "date": "2026-11-30",
+          "remaining": 4.63
+        },
+        {
+          "date": "2026-12-01",
+          "remaining": 4.27
+        },
+        {
+          "date": "2026-12-02",
+          "remaining": 3.92
+        },
+        {
+          "date": "2026-12-03",
+          "remaining": 3.56
+        },
+        {
+          "date": "2026-12-04",
+          "remaining": 3.2
+        },
+        {
+          "date": "2026-12-05",
+          "remaining": 2.85
+        },
+        {
+          "date": "2026-12-06",
+          "remaining": 2.49
+        },
+        {
+          "date": "2026-12-07",
+          "remaining": 2.14
+        },
+        {
+          "date": "2026-12-08",
+          "remaining": 1.78
+        },
+        {
+          "date": "2026-12-09",
+          "remaining": 1.42
+        },
+        {
+          "date": "2026-12-10",
+          "remaining": 1.07
+        },
+        {
+          "date": "2026-12-11",
+          "remaining": 0.71
+        },
+        {
+          "date": "2026-12-12",
+          "remaining": 0.36
+        },
+        {
+          "date": "2026-12-13",
+          "remaining": 0.0
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "issues": 17,
+    "closed": 3,
+    "open": 14,
+    "points_total": 55,
+    "points_done": 10
+  },
+  "issues": [
+    {
+      "number": 17,
+      "title": "[Security] Dependabot · CodeQL 의존성 보안 점검",
+      "points": 2,
+      "milestone": "M2 · 감정 기록 + 위기 감지 + 배포",
+      "created": "2026-10-15T11:01:56+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 16,
+      "title": "[Feature] 대화 톤 선택을 Feature Flag로 점진적 공개",
+      "points": 3,
+      "milestone": "M2 · 감정 기록 + 위기 감지 + 배포",
+      "created": "2026-10-15T11:01:55+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 15,
+      "title": "[Test] 위기 감지 테스트 케이스 자동화",
+      "points": 3,
+      "milestone": "M2 · 감정 기록 + 위기 감지 + 배포",
+      "created": "2026-10-15T11:01:54+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 14,
+      "title": "[Feature] 위기 신호 감지 & 도움 기관 안내",
+      "points": 5,
+      "milestone": "M2 · 감정 기록 + 위기 감지 + 배포",
+      "created": "2026-10-15T11:01:53+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 13,
+      "title": "[Feature] 주간 마음 리포트 화면",
+      "points": 5,
+      "milestone": "M2 · 감정 기록 + 위기 감지 + 배포",
+      "created": "2026-10-15T11:01:52+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 12,
+      "title": "[Feature] 감정 기록 DB · API",
+      "points": 3,
+      "milestone": "M2 · 감정 기록 + 위기 감지 + 배포",
+      "created": "2026-10-15T11:01:51+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 11,
+      "title": "[CI] 테스트·빌드 CI 구축 + GitHub Secrets로 API 키 관리",
+      "points": 3,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:50+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 10,
+      "title": "[Feature] 채팅 화면 UI + 서버 연동",
+      "points": 5,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:49+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 9,
+      "title": "[Feature] AI 마음 대화 API (Gemini 연동 + Fallback)",
+      "points": 5,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:48+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 8,
+      "title": "[Docs] ADR(아키텍처 결정 기록) · Wiki API 명세",
+      "points": 2,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:47+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 7,
+      "title": "[Docs] GitHub Flow 브랜치 전략 · PR 템플릿 · 코드리뷰 규칙",
+      "points": 2,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:47+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 6,
+      "title": "[Chore] Flutter 앱 · FastAPI 서버 프로젝트 골격 생성",
+      "points": 3,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:45+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 5,
+      "title": "[Bug] README 대시보드 이미지가 갱신 후에도 이전 이미지로 표시됨",
+      "points": 1,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:44+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 4,
+      "title": "[Chore] GitHub Projects 칸반·이슈 템플릿·라벨·마일스톤 구성",
+      "points": 3,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:43+00:00",
+      "closed": null,
+      "cycle_hours": null
+    },
+    {
+      "number": 3,
+      "title": "[CI] DORA 4대 지표 자동 수집 파이프라인",
+      "points": 5,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:42+00:00",
+      "closed": "2026-10-15T11:01:42+00:00",
+      "cycle_hours": 0.0
+    },
+    {
+      "number": 2,
+      "title": "[Docs] 프로젝트 제안서 작성 (문제정의·핵심 기능·기술 스택·마일스톤)",
+      "points": 3,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:40+00:00",
+      "closed": "2026-10-15T11:01:41+00:00",
+      "cycle_hours": 0.0
+    },
+    {
+      "number": 1,
+      "title": "[Chore] Git/GitHub 개발 환경 구축 (SSH 키·저장소·첫 커밋)",
+      "points": 2,
+      "milestone": "M1 · 기반 구축 + AI 대화",
+      "created": "2026-10-15T11:01:38+00:00",
+      "closed": "2026-10-15T11:01:39+00:00",
+      "cycle_hours": 0.0
+    }
+  ]
+}
