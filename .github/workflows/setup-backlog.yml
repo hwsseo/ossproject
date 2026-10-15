@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────────────────────
+# 백로그 자동 구성 (한 번만 실행하면 됨, 여러 번 눌러도 중복 생성 안 됨)
+#  - 라벨 체계 / 마일스톤 2개 / 이슈 17개 생성
+#  - 이미 끝난 작업(1·2주차)은 자동으로 Closed 처리
+#  - Actions 탭 → Setup Backlog → Run workflow
+# ─────────────────────────────────────────────────────────────
+name: Setup Backlog
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 라벨 · 마일스톤 · 이슈 생성
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: python scripts/setup_backlog.py

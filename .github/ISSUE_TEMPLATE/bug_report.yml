@@ -1,0 +1,50 @@
+name: "🐞 버그 신고 (Bug)"
+description: 잘못 동작하는 부분을 알려주세요
+title: "[Bug] "
+labels: ["type: bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "버그를 발견해 주셔서 고마워요! 아래 칸을 채워주면 빠르게 고칠 수 있어요."
+  - type: textarea
+    id: what
+    attributes:
+      label: 어떤 문제가 있나요?
+      placeholder: "예) 채팅 전송 버튼을 눌러도 답장이 오지 않아요"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      placeholder: |
+        1. 앱 실행
+        2. 채팅 화면에서 '안녕' 입력 후 전송
+        3. 답장이 오지 않음
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 결과
+      placeholder: "AI 답장이 3초 안에 표시되어야 해요"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 발생 위치
+      options: ["앱 (Flutter)", "서버 (FastAPI)", "AI 연동", "CI/CD·자동화", "기타"]
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 심각도
+      options: ["🔴 높음 - 서비스 사용 불가", "🟡 보통 - 일부 기능 문제", "🟢 낮음 - 불편한 정도"]
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 스크린샷 · 로그 (선택)

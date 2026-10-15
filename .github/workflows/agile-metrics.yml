@@ -1,0 +1,64 @@
+# ─────────────────────────────────────────────────────────────
+# 애자일 지표 자동 분석 (선택과제)
+#  - Cycle Time / Velocity / Burndown 을 이슈 기록으로 계산
+#  - 이슈가 열리거나 닫힐 때 / 매주 월요일 09:10(KST) / 수동 실행
+#  - 결과: metrics/agile-*.json, metrics/agile-dashboard.png,
+#          reports/agile-*.md, README.md 의 애자일 섹션 자동 갱신
+# ─────────────────────────────────────────────────────────────
+name: Agile Metrics
+
+on:
+  issues:
+    types: [opened, closed, reopened, milestoned, demilestoned, labeled]
+  workflow_run:
+    workflows: [Setup Backlog]
+    types: [completed]
+  schedule:
+    - cron: "10 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: repo-bot-commit
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 잠깐 대기 (연속 이벤트 묶기)
+        if: github.event_name == 'issues'
+        run: sleep 20
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install matplotlib==3.9.2
+      - name: Cycle Time · Velocity · Burndown 계산
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: python scripts/agile_metrics.py
+      - name: JSON 결과를 Artifact로 저장
+        uses: actions/upload-artifact@v4
+        with:
+          name: agile-metrics-${{ github.run_number }}
+          path: metrics/agile-latest.json
+          retention-days: 90
+      - name: 결과를 저장소에 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metrics reports README.md
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "chore(agile): update metrics [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
