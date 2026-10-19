@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T11:02:18+00:00",
+  "generated_at": "2026-10-19T04:30:50+00:00",
   "cycle_time_hours_median": 0.0,
   "cycle_time_hours_mean": 0.0,
   "current_sprint": 1,
@@ -24,11 +24,27 @@
       "done_points": 10,
       "progress_pct": 29.4,
       "remaining_points": 24,
-      "ideal_remaining_today": 34.0,
-      "days_left": 31,
+      "ideal_remaining_today": 29.61,
+      "days_left": 27,
       "actual": [
         {
           "date": "2026-10-15",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-16",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-17",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-18",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-19",
           "remaining": 24
         }
       ],
@@ -171,11 +187,27 @@
       "done_points": 0,
       "progress_pct": 0.0,
       "remaining_points": 21,
-      "ideal_remaining_today": 21.0,
-      "days_left": 59,
+      "ideal_remaining_today": 19.58,
+      "days_left": 55,
       "actual": [
         {
           "date": "2026-10-15",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-16",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-17",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-18",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-19",
           "remaining": 21
         }
       ],
