@@ -18,14 +18,14 @@
 <!-- AGILE:START -->
 ## 🏃 애자일 지표 (자동 갱신)
 
-> 최근 갱신: 2026-10-19 13:30 KST · [최신 애자일 보고서](reports/agile-2026-W43.md) · [원본 JSON](metrics/agile-latest.json)
+> 최근 갱신: 2026-10-26 13:35 KST · [최신 애자일 보고서](reports/agile-2026-W44.md) · [원본 JSON](metrics/agile-latest.json)
 
-![Agile dashboard](metrics/agile-dashboard.png?v=1792384250)
+![Agile dashboard](metrics/agile-dashboard.png?v=1792989337)
 
 | 지표 | 값 | 설명 |
 |---|---|---|
 | ⏱️ Cycle Time | **0 min** (중앙값) · 평균 0 min | 이슈 생성 → 완료까지 걸린 시간 |
-| 🏃 Velocity | **스프린트 1: 10pt** (진행 중) | 2주 스프린트마다 끝낸 Story Point |
-| 🔥 Burndown · M1 · 기반 구축 + AI 대화 | **29%** 완료 (10/34pt, D-27) | 🟢 계획보다 6pt 앞섬 |
-| 🔥 Burndown · M2 · 감정 기록 + 위기 감지 + 배포 | **0%** 완료 (0/21pt, D-55) | 🟡 계획보다 1pt 뒤처짐 |
+| 🏃 Velocity | **스프린트 2: 0pt** (진행 중) · 평균 10pt | 2주 스프린트마다 끝낸 Story Point |
+| 🔥 Burndown · M1 · 기반 구축 + AI 대화 | **29%** 완료 (10/34pt, D-20) | 🟡 계획보다 2pt 뒤처짐 |
+| 🔥 Burndown · M2 · 감정 기록 + 위기 감지 + 배포 | **0%** 완료 (0/21pt, D-48) | 🔴 계획보다 4pt 뒤처짐 |
 <!-- AGILE:END -->
