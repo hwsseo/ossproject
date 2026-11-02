@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-26T03:25:44+00:00",
+  "generated_at": "2026-11-02T04:39:23+00:00",
   "metrics": {
-    "deployment_frequency_per_week": 3.7,
+    "deployment_frequency_per_week": 2.28,
     "lead_time_hours_median": 0.06,
     "change_failure_rate_pct": 14.3,
     "mttr_hours": 0.01,
@@ -13,7 +13,7 @@
       "currently_failing": false
     },
     "window_days": 30,
-    "span_days": 11.34
+    "span_days": 18.39
   },
   "levels": {
     "deployment_frequency": "High",
