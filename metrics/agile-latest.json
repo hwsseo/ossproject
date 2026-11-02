@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T04:35:37+00:00",
+  "generated_at": "2026-11-02T05:52:18+00:00",
   "cycle_time_hours_median": 0.0,
   "cycle_time_hours_mean": 0.0,
   "current_sprint": 2,
@@ -32,8 +32,8 @@
       "done_points": 10,
       "progress_pct": 29.4,
       "remaining_points": 24,
-      "ideal_remaining_today": 21.94,
-      "days_left": 20,
+      "ideal_remaining_today": 14.26,
+      "days_left": 13,
       "actual": [
         {
           "date": "2026-10-15",
@@ -81,6 +81,34 @@
         },
         {
           "date": "2026-10-26",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-27",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-28",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-29",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-30",
+          "remaining": 24
+        },
+        {
+          "date": "2026-10-31",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-01",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-02",
           "remaining": 24
         }
       ],
@@ -223,8 +251,8 @@
       "done_points": 0,
       "progress_pct": 0.0,
       "remaining_points": 21,
-      "ideal_remaining_today": 17.08,
-      "days_left": 48,
+      "ideal_remaining_today": 14.59,
+      "days_left": 41,
       "actual": [
         {
           "date": "2026-10-15",
@@ -272,6 +300,34 @@
         },
         {
           "date": "2026-10-26",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-27",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-28",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-29",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-30",
+          "remaining": 21
+        },
+        {
+          "date": "2026-10-31",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-01",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-02",
           "remaining": 21
         }
       ],
