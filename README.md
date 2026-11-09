@@ -3,13 +3,13 @@
 <!-- DORA:START -->
 ## 📊 DORA 지표 (자동 갱신)
 
-> 최근 갱신: 2026-11-02 13:39 KST · [최신 주간 보고서](reports/weekly-2026-W45.md) · [원본 JSON](metrics/dora-latest.json)
+> 최근 갱신: 2026-11-09 13:50 KST · [최신 주간 보고서](reports/weekly-2026-W46.md) · [원본 JSON](metrics/dora-latest.json)
 
 ![DORA dashboard](metrics/dora-dashboard.png)
 
 | 지표 | 값 | 성과 등급 | 지난 측정 대비 |
 |---|---|---|---|
-| 🚀 배포 빈도 (Deployment Frequency) | **2.3회 / 주** | 🔵 High | ▼ 1.4회 (악화) |
+| 🚀 배포 빈도 (Deployment Frequency) | **1.6회 / 주** | 🔵 High | ▼ 0.6회 (악화) |
 | ⏱️ 변경 리드타임 (Lead Time for Changes) | **4 min** (중앙값) | 🟢 Elite | 변화 없음 |
 | 💥 변경 실패율 (Change Failure Rate) | **14.3%** | 🔵 High | 변화 없음 |
 | 🛠️ 평균 복구 시간 (MTTR) | **1 min** | 🟢 Elite | 변화 없음 |
