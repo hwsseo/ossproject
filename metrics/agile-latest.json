@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-02T05:52:18+00:00",
+  "generated_at": "2026-11-09T06:07:21+00:00",
   "cycle_time_hours_median": 0.0,
   "cycle_time_hours_mean": 0.0,
-  "current_sprint": 2,
+  "current_sprint": 3,
   "current_sprint_points": 0,
-  "avg_velocity": 10,
+  "avg_velocity": 5,
   "velocity": [
     {
       "sprint": 1,
@@ -20,6 +20,14 @@
       "end": "2026-11-08",
       "points": 0,
       "issues": 0,
+      "in_progress": false
+    },
+    {
+      "sprint": 3,
+      "start": "2026-11-09",
+      "end": "2026-11-22",
+      "points": 0,
+      "issues": 0,
       "in_progress": true
     }
   ],
@@ -32,8 +40,8 @@
       "done_points": 10,
       "progress_pct": 29.4,
       "remaining_points": 24,
-      "ideal_remaining_today": 14.26,
-      "days_left": 13,
+      "ideal_remaining_today": 6.58,
+      "days_left": 6,
       "actual": [
         {
           "date": "2026-10-15",
@@ -109,6 +117,34 @@
         },
         {
           "date": "2026-11-02",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-03",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-04",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-05",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-06",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-07",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-08",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-09",
           "remaining": 24
         }
       ],
@@ -251,8 +287,8 @@
       "done_points": 0,
       "progress_pct": 0.0,
       "remaining_points": 21,
-      "ideal_remaining_today": 14.59,
-      "days_left": 41,
+      "ideal_remaining_today": 12.1,
+      "days_left": 34,
       "actual": [
         {
           "date": "2026-10-15",
@@ -328,6 +364,34 @@
         },
         {
           "date": "2026-11-02",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-03",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-04",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-05",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-06",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-07",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-08",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-09",
           "remaining": 21
         }
       ],
