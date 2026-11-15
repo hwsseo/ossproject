@@ -1,0 +1,98 @@
+# ─────────────────────────────────────────────────────────────
+# [7주차] 기본 CI/CD — Lint → Test(Matrix) → Build → Deploy
+#  - Lint/Test 자동 실행 (ruff, pytest)
+#  - Matrix: OS 2종 × Python 3종 = 6조합
+#  - Secrets: GEMINI_API_KEY 를 환경변수로 안전하게 주입 (값은 로그에 마스킹)
+#  - Build → Test → Deploy 의존성(needs) + 아티팩트 업로드/다운로드
+# ─────────────────────────────────────────────────────────────
+name: CI Basic (7주차)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: 🔍 Lint (ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install ruff
+      - run: ruff check server tests
+
+  test:
+    name: 🧪 Test (${{ matrix.os }}, py${{ matrix.python-version }})
+    needs: lint
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install pytest
+      - name: 🔐 Secret 주입 확인 (값은 출력하지 않음)
+        shell: bash
+        run: |
+          if [ -n "$GEMINI_API_KEY" ]; then
+            echo "GEMINI_API_KEY 주입됨 (길이: ${#GEMINI_API_KEY}자, 값은 마스킹)"
+          else
+            echo "::warning::GEMINI_API_KEY 미설정 → AI 호출 없이 Fallback 모드로 테스트"
+          fi
+      - run: python -m pytest -q
+
+  build:
+    name: 📦 Build
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 서버 패키지 빌드
+        run: |
+          mkdir -p dist
+          cat > dist/build-info.json <<JSON
+          {"commit": "${GITHUB_SHA}", "run": "${GITHUB_RUN_NUMBER}", "built_at": "$(date -u +%FT%TZ)"}
+          JSON
+          zip -qr dist/maeumi-server.zip server requirements-dev.txt
+          ls -l dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: maeumi-build
+          path: dist/
+          retention-days: 7
+
+  deploy:
+    name: 🚀 Deploy (staging)
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: maeumi-build
+          path: dist
+      - name: 배포 (아티팩트 검증 후 배포 기록)
+        run: |
+          unzip -l dist/maeumi-server.zip
+          cat dist/build-info.json
+          {
+            echo "## 🚀 Staging 배포 완료"
+            echo "- 커밋: \`${GITHUB_SHA::7}\`"
+            echo "- 아티팩트: maeumi-server.zip ($(du -h dist/maeumi-server.zip | cut -f1))"
+          } >> "$GITHUB_STEP_SUMMARY"
