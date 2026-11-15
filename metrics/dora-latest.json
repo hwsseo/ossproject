@@ -1,82 +1,42 @@
 {
-  "generated_at": "2026-11-09T04:50:50+00:00",
+  "generated_at": "2026-11-15T08:28:44+00:00",
   "metrics": {
-    "deployment_frequency_per_week": 1.65,
-    "lead_time_hours_median": 0.06,
-    "change_failure_rate_pct": 14.3,
-    "mttr_hours": 0.01,
+    "deployment_frequency_per_week": 14.0,
+    "lead_time_hours_median": 0.0,
+    "change_failure_rate_pct": 0.0,
+    "mttr_hours": null,
     "counts": {
-      "total": 7,
-      "success": 6,
-      "failure": 1,
-      "restores": 1,
+      "total": 2,
+      "success": 2,
+      "failure": 0,
+      "restores": 0,
       "currently_failing": false
     },
     "window_days": 30,
-    "span_days": 25.4
+    "span_days": 1.0
   },
   "levels": {
-    "deployment_frequency": "High",
+    "deployment_frequency": "Elite",
     "lead_time": "Elite",
-    "change_failure_rate": "High",
-    "mttr": "Elite"
+    "change_failure_rate": "Elite",
+    "mttr": "N/A"
   },
   "deploys": [
     {
-      "run_number": 1,
-      "sha": "b206c8d4066ecb47060aae433f13272301f2969c",
+      "run_number": 8,
+      "sha": "7bdc55a6eddfe2f997b58f4c166fabbb338b54d1",
       "conclusion": "success",
-      "finished_at": "2026-10-14T19:18:50+00:00",
-      "lead_hours": 0.01,
-      "url": "https://github.com/hwsseo/ossproject/actions/runs/38622584590"
+      "finished_at": "2026-11-15T08:28:30+00:00",
+      "lead_hours": 0.0,
+      "url": "https://github.com/hwsseo/ossproject/actions/runs/43694658839"
     },
     {
-      "run_number": 2,
-      "sha": "3e7f2d184a6af8c45795b7c351397cd7e3c9f987",
+      "run_number": 9,
+      "sha": "53e49759b8a44f5536bd29a0d03467b96dc3089a",
       "conclusion": "success",
-      "finished_at": "2026-10-14T19:22:49+00:00",
-      "lead_hours": 0.06,
-      "url": "https://github.com/hwsseo/ossproject/actions/runs/38623139532"
-    },
-    {
-      "run_number": 3,
-      "sha": "3e7f2d184a6af8c45795b7c351397cd7e3c9f987",
-      "conclusion": "failure",
-      "finished_at": "2026-10-14T19:23:13+00:00",
-      "lead_hours": null,
-      "url": "https://github.com/hwsseo/ossproject/actions/runs/38623200111"
-    },
-    {
-      "run_number": 4,
-      "sha": "6980b65c7bb9d2c52866a59c2cf3d5983af284a9",
-      "conclusion": "success",
-      "finished_at": "2026-10-14T19:23:38+00:00",
-      "lead_hours": 0.01,
-      "url": "https://github.com/hwsseo/ossproject/actions/runs/38623259462"
-    },
-    {
-      "run_number": 5,
-      "sha": "04f418beae137fb682f6ef8f76ef3b0825a03d57",
-      "conclusion": "success",
-      "finished_at": "2026-10-14T19:33:52+00:00",
-      "lead_hours": 0.17,
-      "url": "https://github.com/hwsseo/ossproject/actions/runs/38624705638"
-    },
-    {
-      "run_number": 6,
-      "sha": "1cdac2d677200593f1efbe7537478413e6007dbb",
-      "conclusion": "success",
-      "finished_at": "2026-10-15T10:54:42+00:00",
-      "lead_hours": 7.67,
-      "url": "https://github.com/hwsseo/ossproject/actions/runs/38723581320"
-    },
-    {
-      "run_number": 7,
-      "sha": "f9d5dfcbc2072aed3b85d2f595998c1b2b903a48",
-      "conclusion": "success",
-      "finished_at": "2026-10-15T11:42:30+00:00",
-      "lead_hours": 0.67,
-      "url": "https://github.com/hwsseo/ossproject/actions/runs/38729228050"
+      "finished_at": "2026-11-15T08:28:39+00:00",
+      "lead_hours": 0.0,
+      "url": "https://github.com/hwsseo/ossproject/actions/runs/43694664205"
     }
   ]
 }
