@@ -1,0 +1,21 @@
+# [8주차] Composite Action — Python 설치 + pip 캐시 + 의존성 설치를 한 번에
+name: Setup Maeumi Python
+description: Python 설치, pip 캐시, 개발 의존성 설치를 공통으로 처리한다.
+inputs:
+  python-version:
+    description: Python 버전
+    default: "3.12"
+  cache:
+    description: pip 캐시 사용 여부 (true/false)
+    default: "true"
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: ${{ inputs.cache == 'true' && 'pip' || '' }}
+        cache-dependency-path: requirements-dev.txt
+    - name: 의존성 설치
+      shell: bash
+      run: python -m pip install -r requirements-dev.txt
