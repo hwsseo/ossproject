@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-15T08:28:44+00:00",
+  "generated_at": "2026-11-15T08:29:10+00:00",
   "metrics": {
-    "deployment_frequency_per_week": 14.0,
+    "deployment_frequency_per_week": 21.0,
     "lead_time_hours_median": 0.0,
     "change_failure_rate_pct": 0.0,
     "mttr_hours": null,
     "counts": {
-      "total": 2,
-      "success": 2,
+      "total": 3,
+      "success": 3,
       "failure": 0,
       "restores": 0,
       "currently_failing": false
@@ -37,6 +37,14 @@
       "finished_at": "2026-11-15T08:28:39+00:00",
       "lead_hours": 0.0,
       "url": "https://github.com/hwsseo/ossproject/actions/runs/43694664205"
+    },
+    {
+      "run_number": 10,
+      "sha": "67aff6551a1082b8e7145698d786aa9e06cc261c",
+      "conclusion": "success",
+      "finished_at": "2026-11-15T08:28:48+00:00",
+      "lead_hours": 0.01,
+      "url": "https://github.com/hwsseo/ossproject/actions/runs/43694670760"
     }
   ]
 }
