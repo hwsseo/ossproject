@@ -1,6 +1,6 @@
 # 📊 DORA 주간 보고서 — 2026년 46주차
 
-> 기간: 2026-11-09 ~ 2026-11-15 · 생성: 2026-11-15 17:39 KST · 계산 범위: 최근 30일 · 자동 생성 (GitHub Actions)
+> 기간: 2026-11-09 ~ 2026-11-15 · 생성: 2026-11-15 17:40 KST · 계산 범위: 최근 30일 · 자동 생성 (GitHub Actions)
 
 ![DORA dashboard](../metrics/dora-dashboard.png)
 
@@ -8,17 +8,18 @@
 
 | 지표 | 값 | 성과 등급 | 지난 측정 대비 |
 |---|---|---|---|
-| 🚀 배포 빈도 (Deployment Frequency) | **28.0회 / 주** | 🟢 Elite | ▲ 7.0회 (개선) |
-| ⏱️ 변경 리드타임 (Lead Time for Changes) | **1 min** (중앙값) | 🟢 Elite | ▲ 0.0h (악화) |
+| 🚀 배포 빈도 (Deployment Frequency) | **35.0회 / 주** | 🟢 Elite | ▲ 7.0회 (개선) |
+| ⏱️ 변경 리드타임 (Lead Time for Changes) | **0 min** (중앙값) | 🟢 Elite | ▼ 0.0h (개선) |
 | 💥 변경 실패율 (Change Failure Rate) | **0.0%** | 🟢 Elite | 변화 없음 |
 | 🛠️ 평균 복구 시간 (MTTR) | **N/A** | ⚪ N/A | — |
 
-- 전체 배포 **4회** (성공 4 · 실패 0), 복구 0회
+- 전체 배포 **5회** (성공 5 · 실패 0), 복구 0회
 
 ## 2. 이번 주 배포 기록
 
 | # | 완료 시각 (KST) | 결과 | 커밋 | 리드타임 |
 |---|---|---|---|---|
+| [12](https://github.com/hwsseo/ossproject/actions/runs/43695549597) | 11-15 17:39 | ✅ 성공 | `af6e8ba` docs(ci): 캐시 벤치마크 워크플로우와 최적화 전후 비교 리포트 추가 | 0 min |
 | [11](https://github.com/hwsseo/ossproject/actions/runs/43695518624) | 11-15 17:39 | ✅ 성공 | `0271111` ci: Lint→Test(Matrix)→Build→Deploy 기본 워크플로우 추가 | 10 min |
 | [10](https://github.com/hwsseo/ossproject/actions/runs/43694670760) | 11-15 17:28 | ✅ 성공 | `67aff65` feat(safety): 위기 표현 키워드 감지 기능 추가 (#20) | 1 min |
 | [9](https://github.com/hwsseo/ossproject/actions/runs/43694664205) | 11-15 17:28 | ✅ 성공 | `53e4975` docs: 기여 가이드·PR 템플릿·README 소개 추가 (#19) | 0 min |
