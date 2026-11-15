@@ -54,7 +54,7 @@ reports/    자동 생성 주간 보고서
 
 | 지표 | 값 | 성과 등급 | 지난 측정 대비 |
 |---|---|---|---|
-| 🚀 배포 빈도 (Deployment Frequency) | **21.0회 / 주** | 🟢 Elite | ▲ 7.0회 (개선) |
+| 🚀 배포 빈도 (Deployment Frequency) | **21.0회 / 주** | 🟢 Elite | 변화 없음 |
 | ⏱️ 변경 리드타임 (Lead Time for Changes) | **0 min** (중앙값) | 🟢 Elite | 변화 없음 |
 | 💥 변경 실패율 (Change Failure Rate) | **0.0%** | 🟢 Elite | 변화 없음 |
 | 🛠️ 평균 복구 시간 (MTTR) | **N/A** | ⚪ N/A | — |
