@@ -1,0 +1,115 @@
+# ─────────────────────────────────────────────────────────────
+# [8주차] 최적화된 CI/CD
+#  - 변경 파일 감지(paths-filter): 코드가 바뀐 경우에만 Lint/Test/Build
+#  - Matrix 확장: 3 OS × 3 Python + include/exclude
+#  - Reusable Workflow(reusable-python-test.yml) + Composite Action(setup-maeumi)로 중복 제거
+#  - pip 캐시
+#  - 선택적 배포: main push + 서버 코드 변경 시에만 Deploy
+# ─────────────────────────────────────────────────────────────
+name: CI Optimized (8주차)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: ci-optimized-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: 🔎 변경 파일 감지
+    runs-on: ubuntu-latest
+    outputs:
+      code: ${{ steps.filter.outputs.code }}
+      docs: ${{ steps.filter.outputs.docs }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            code:
+              - 'server/**'
+              - 'tests/**'
+              - 'requirements*.txt'
+              - '.github/workflows/ci-optimized.yml'
+              - '.github/workflows/reusable-python-test.yml'
+              - '.github/actions/**'
+            docs:
+              - '**/*.md'
+      - name: 결과
+        run: |
+          echo "코드 변경: ${{ steps.filter.outputs.code }} / 문서 변경: ${{ steps.filter.outputs.docs }}" >> "$GITHUB_STEP_SUMMARY"
+
+  lint:
+    name: 🔍 Lint
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-maeumi
+      - run: ruff check server tests
+
+  test:
+    name: 🧪 Test
+    needs: lint
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+        exclude:
+          - os: macos-latest
+            python-version: "3.10"
+        include:
+          - os: ubuntu-latest
+            python-version: "3.13"
+    uses: ./.github/workflows/reusable-python-test.yml
+    with:
+      os: ${{ matrix.os }}
+      python-version: ${{ matrix.python-version }}
+    secrets:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+  build:
+    name: 📦 Build
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p dist
+          echo "{\"commit\": \"${GITHUB_SHA}\", \"run\": \"${GITHUB_RUN_NUMBER}\"}" > dist/build-info.json
+          zip -qr dist/maeumi-server.zip server requirements-dev.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: maeumi-build-optimized
+          path: dist/
+          retention-days: 7
+
+  deploy:
+    name: 🚀 선택적 Deploy
+    needs: [changes, build]
+    if: >-
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main' &&
+      needs.changes.outputs.code == 'true'
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: maeumi-build-optimized
+          path: dist
+      - run: |
+          unzip -l dist/maeumi-server.zip
+          echo "## 🚀 선택적 배포 완료 (서버 코드 변경 감지)" >> "$GITHUB_STEP_SUMMARY"
