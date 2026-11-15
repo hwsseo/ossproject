@@ -1,0 +1,35 @@
+# [8주차] Reusable Workflow — 어떤 OS/Python 조합이든 같은 테스트 절차를 재사용
+name: Reusable Python Test
+
+on:
+  workflow_call:
+    inputs:
+      os:
+        type: string
+        default: ubuntu-latest
+      python-version:
+        type: string
+        default: "3.12"
+    secrets:
+      GEMINI_API_KEY:
+        required: false
+
+jobs:
+  test:
+    runs-on: ${{ inputs.os }}
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-maeumi
+        with:
+          python-version: ${{ inputs.python-version }}
+      - name: 테스트
+        shell: bash
+        run: python -m pytest -q --junitxml=test-results.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ inputs.os }}-py${{ inputs.python-version }}
+          path: test-results.xml
+          retention-days: 3
