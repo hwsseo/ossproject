@@ -1,0 +1,88 @@
+# [8주차] 캐싱 전후 실행 시간 측정 → reports/ci-cache-benchmark.md 자동 커밋
+name: Cache Benchmark (8주차)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - requirements-dev.txt
+      - .github/workflows/cache-benchmark.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: ① 캐시 없이 설치 (최적화 전)
+        id: cold
+        run: |
+          python -m venv /tmp/v1
+          s=$(date +%s.%N)
+          /tmp/v1/bin/pip install --no-cache-dir -q -r requirements-dev.txt
+          e=$(date +%s.%N)
+          echo "t=$(python -c "print(round($e-$s,2))")" >> "$GITHUB_OUTPUT"
+      - name: pip 캐시 복원 (actions/cache)
+        id: restore
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('requirements-dev.txt') }}
+      - name: 캐시 채우기 (미스일 때만)
+        if: steps.restore.outputs.cache-hit != 'true'
+        run: |
+          python -m venv /tmp/v2
+          /tmp/v2/bin/pip install -q -r requirements-dev.txt
+      - name: ② 캐시 사용해 설치 (최적화 후)
+        id: warm
+        run: |
+          python -m venv /tmp/v3
+          s=$(date +%s.%N)
+          /tmp/v3/bin/pip install -q -r requirements-dev.txt
+          e=$(date +%s.%N)
+          echo "t=$(python -c "print(round($e-$s,2))")" >> "$GITHUB_OUTPUT"
+      - name: 리포트 작성
+        env:
+          COLD: ${{ steps.cold.outputs.t }}
+          WARM: ${{ steps.warm.outputs.t }}
+          HIT: ${{ steps.restore.outputs.cache-hit }}
+        run: |
+          python - <<'PY'
+          import os, datetime
+          cold, warm = float(os.environ["COLD"]), float(os.environ["WARM"])
+          imp = (cold - warm) / cold * 100 if cold else 0
+          now = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).strftime("%Y-%m-%d %H:%M KST")
+          run = f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+          hit = "적중(hit)" if os.environ.get("HIT") == "true" else "미스(miss) → 이번 실행에서 저장"
+          md = f"""# ⚡ CI 캐싱 전후 비교 리포트 (자동 생성)
+
+          > 측정: {now} · [실행 기록]({run}) · Runner: ubuntu-latest / Python 3.12
+
+          | 구분 | 의존성 설치 시간 |
+          |---|---|
+          | ① 최적화 전 (캐시 없음, `--no-cache-dir`) | **{cold:.2f}초** |
+          | ② 최적화 후 (pip 캐시 사용) | **{warm:.2f}초** |
+          | **개선률** | **{imp:.1f}% 단축** ({cold-warm:.2f}초 절약) |
+
+          - actions/cache 상태: {hit}
+          - 대상 패키지: `requirements-dev.txt` (pytest, ruff, fastapi, uvicorn, httpx)
+          - CI Optimized의 테스트 Matrix는 9개 job이 같은 설치를 반복하므로, job당 절약 시간 × 9만큼 전체 실행 시간이 줄어든다.
+          """
+          md = "\n".join(l[10:] if l.startswith(" " * 10) else l for l in md.splitlines())
+          open("reports/ci-cache-benchmark.md", "w", encoding="utf-8").write(md + "\n")
+          print(md)
+          open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8").write(md)
+          PY
+      - name: 리포트 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/ci-cache-benchmark.md
+          git commit -m "chore(ci): 캐시 벤치마크 리포트 갱신 [skip ci]" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 3; done
