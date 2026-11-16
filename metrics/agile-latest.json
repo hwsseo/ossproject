@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T06:07:21+00:00",
+  "generated_at": "2026-11-16T06:13:07+00:00",
   "cycle_time_hours_median": 0.0,
   "cycle_time_hours_mean": 0.0,
   "current_sprint": 3,
@@ -40,8 +40,8 @@
       "done_points": 10,
       "progress_pct": 29.4,
       "remaining_points": 24,
-      "ideal_remaining_today": 6.58,
-      "days_left": 6,
+      "ideal_remaining_today": null,
+      "days_left": -1,
       "actual": [
         {
           "date": "2026-10-15",
@@ -145,6 +145,30 @@
         },
         {
           "date": "2026-11-09",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-10",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-11",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-12",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-13",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-14",
+          "remaining": 24
+        },
+        {
+          "date": "2026-11-15",
           "remaining": 24
         }
       ],
@@ -287,8 +311,8 @@
       "done_points": 0,
       "progress_pct": 0.0,
       "remaining_points": 21,
-      "ideal_remaining_today": 12.1,
-      "days_left": 34,
+      "ideal_remaining_today": 9.61,
+      "days_left": 27,
       "actual": [
         {
           "date": "2026-10-15",
@@ -392,6 +416,34 @@
         },
         {
           "date": "2026-11-09",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-10",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-11",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-12",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-13",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-14",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-15",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-16",
           "remaining": 21
         }
       ],
