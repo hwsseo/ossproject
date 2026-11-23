@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T06:13:07+00:00",
+  "generated_at": "2026-11-23T07:23:42+00:00",
   "cycle_time_hours_median": 0.0,
   "cycle_time_hours_mean": 0.0,
-  "current_sprint": 3,
+  "current_sprint": 4,
   "current_sprint_points": 0,
-  "avg_velocity": 5,
+  "avg_velocity": 3.3,
   "velocity": [
     {
       "sprint": 1,
@@ -28,6 +28,14 @@
       "end": "2026-11-22",
       "points": 0,
       "issues": 0,
+      "in_progress": false
+    },
+    {
+      "sprint": 4,
+      "start": "2026-11-23",
+      "end": "2026-12-06",
+      "points": 0,
+      "issues": 0,
       "in_progress": true
     }
   ],
@@ -41,7 +49,7 @@
       "progress_pct": 29.4,
       "remaining_points": 24,
       "ideal_remaining_today": null,
-      "days_left": -1,
+      "days_left": -8,
       "actual": [
         {
           "date": "2026-10-15",
@@ -311,8 +319,8 @@
       "done_points": 0,
       "progress_pct": 0.0,
       "remaining_points": 21,
-      "ideal_remaining_today": 9.61,
-      "days_left": 27,
+      "ideal_remaining_today": 7.12,
+      "days_left": 20,
       "actual": [
         {
           "date": "2026-10-15",
@@ -444,6 +452,34 @@
         },
         {
           "date": "2026-11-16",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-17",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-18",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-19",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-20",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-21",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-22",
+          "remaining": 21
+        },
+        {
+          "date": "2026-11-23",
           "remaining": 21
         }
       ],
