@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-16T04:57:29+00:00",
+  "generated_at": "2026-11-23T05:56:47+00:00",
   "metrics": {
-    "deployment_frequency_per_week": 35.0,
+    "deployment_frequency_per_week": 4.43,
     "lead_time_hours_median": 0.0,
     "change_failure_rate_pct": 0.0,
     "mttr_hours": null,
@@ -13,10 +13,10 @@
       "currently_failing": false
     },
     "window_days": 30,
-    "span_days": 1.0
+    "span_days": 7.89
   },
   "levels": {
-    "deployment_frequency": "Elite",
+    "deployment_frequency": "High",
     "lead_time": "Elite",
     "change_failure_rate": "Elite",
     "mttr": "N/A"
